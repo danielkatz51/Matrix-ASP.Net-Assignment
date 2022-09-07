@@ -7,24 +7,19 @@
         <div class="inputs-side">
             <div class="Form-container">
               <div class="form-group">
-                <h4>Name:</h4>
-                <asp:Label ID="TalentName" runat="server" Text=""></asp:Label>
+                <asp:Label ID="TalentName" runat="server" Text="Name: "></asp:Label>
                </div>
               <div class="form-group">
-                  <h4>Email:</h4>
-                <asp:Label ID="TalentEmail" runat="server" Text=""></asp:Label>
+                <asp:Label ID="TalentEmail" runat="server" Text="Email: "></asp:Label>
               </div>
                <div class="form-group">
-                   <h4>Date of birth:</h4>
-                <asp:Label ID="TalentDOB" runat="server" Text=""></asp:Label>
+                <asp:Label ID="TalentDOB" runat="server" Text="Date of birth: "></asp:Label>
               </div>
               <div class="form-group">
-                  <h4>Specialization:</h4>
-                <asp:Label ID="TalentSpec" runat="server" Text=""></asp:Label>
+                <asp:Label ID="TalentSpec" runat="server" Text="Specialization: "></asp:Label>
             </div>
               <div class="form-group">
-                  <h4>ID:</h4>
-                <asp:Label ID="TalentID" runat="server" Text=""></asp:Label>
+                <asp:Label ID="TalentID" runat="server" Text="Talent ID: "></asp:Label>
                </div>
           </div>
         </div>

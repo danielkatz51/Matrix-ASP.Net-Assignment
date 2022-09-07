@@ -32,11 +32,12 @@ namespace Metrix_HW.UserControls
                 //putting the data we pulled in to the labels
                 foreach (DataRow dr in dt.Rows)
                 {
-                    TalentName.Text = dr["Name"].ToString();
-                    TalentEmail.Text = dr["Email"].ToString();
-                    TalentDOB.Text = dr["DOB"].ToString();
-                    TalentID.Text = dr["Talent ID"].ToString();
-                    TalentSpec.Text = dr["Specialization"].ToString();
+                    TalentName.Text += dr["Name"].ToString();
+                    TalentEmail.Text += dr["Email"].ToString();
+                    string[] DOB = dr["DOB"].ToString().Split(' ');
+                    TalentDOB.Text += DOB[0];
+                    TalentID.Text += dr["Talent ID"].ToString();
+                    TalentSpec.Text += dr["Specialization"].ToString();
                 }
                 //======closing The connection
                 sqlconn.Close();

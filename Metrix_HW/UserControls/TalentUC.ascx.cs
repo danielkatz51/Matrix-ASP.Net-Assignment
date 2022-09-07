@@ -36,7 +36,7 @@ namespace Metrix_HW
 
                 case "Delete":
                     //Getting the ID from the same row "Talent ID" Textbox
-                    string idForDelete = ((TextBox)e.Item.FindControl("TalentIDRepeat")).Text;
+                    string idForDelete = ((Label)e.Item.FindControl("lblTalentId")).Text;
                     //Getting the connection string from the web config
                     string ConnectionString = ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString;
                     SqlConnection sqlconn = new SqlConnection(ConnectionString);
@@ -104,7 +104,8 @@ namespace Metrix_HW
             {
                 NameTextBox.Text = dr["Name"].ToString();
                 EmailTextBox.Text = dr["Email"].ToString();
-                DOBTextBox.Text = dr["DOB"].ToString();
+                string[] DOB = dr["DOB"].ToString().Split(' ');
+                DOBTextBox.Text = DOB[0];
                 AgeTextBox.Text = dr["Age"].ToString();
                 SpecTextBox.Text = dr["Specialization"].ToString();
 
@@ -119,15 +120,18 @@ namespace Metrix_HW
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnString"].ConnectionString);
 
             //======= Insert Query.
-            string cmdText = "UPDATE Talents SET Name=@Name,Email=@Email,Age=@Age,Specialization=@Specialization WHERE [Talent ID]=@Id";
+            string cmdText = "UPDATE Talents SET Name=@Name,Email=@Email,Age=@Age,DOB=@DOB,Specialization=@Specialization WHERE [Talent ID]=@Id";
 
             SqlCommand cmd = new SqlCommand(cmdText, con);
-
+            //Need to change the format of the time to SQL query
+            string[] DOB = DOBTextBox.Text.Split('/');
+            string Date = DOB[2] + "-" + DOB[1] + "-" + DOB[0];
             //===== Adding parameters/Values.
             cmd.Parameters.AddWithValue("@Name", NameTextBox.Text);
             cmd.Parameters.AddWithValue("@Email", EmailTextBox.Text);
             cmd.Parameters.AddWithValue("@Age", Convert.ToInt32(AgeTextBox.Text));
             cmd.Parameters.AddWithValue("@Specialization", SpecTextBox.Text);
+            cmd.Parameters.AddWithValue("@DOB", Date);
 
             //====== use same id to pass id parameter.
             cmd.Parameters.AddWithValue("@Id", Convert.ToInt32(hfSelectedRecord.Value));
