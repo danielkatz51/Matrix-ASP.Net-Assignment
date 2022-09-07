@@ -1,0 +1,13 @@
+﻿.Edit-Container {
+    border-top: 5px solid black;
+    border-bottom: 5px solid black;
+    width: 100%;
+    padding: 20px;
+}
+.Edit-box span{
+    margin-left: 10px;
+    font-weight:bold;
+}
+.hidden{
+    visibility: hidden;
+}

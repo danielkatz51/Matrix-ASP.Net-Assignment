@@ -1,0 +1,21 @@
+﻿.hidden{
+    visibility: hidden;
+}
+.PopUp-Container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(0, 0, 0, 0.5);
+    z-index: 1;
+}
+.PopUp-box{
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 60%;
+    background-color: white;
+    border-radius: 5px;
+}

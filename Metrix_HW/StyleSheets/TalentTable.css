@@ -1,0 +1,31 @@
+﻿.table-box{
+    width: 100%;
+}
+.header-box {
+    margin: 20px;
+}
+.header-box h1{
+    margin-bottom:10px;
+}
+.header-box a{
+    text-decoration: none;
+}
+.Table-Button {
+    padding: 2px 5px;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+.EditBtn {
+    background-color: #007bff;
+    
+}
+.DeleteBtn{
+    background-color: crimson;
+    margin-left: 10px;
+}
+.col-ID{
+    display: flex;
+    justify-content: space-between;
+}
+
